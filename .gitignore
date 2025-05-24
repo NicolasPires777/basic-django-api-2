@@ -1,0 +1,35 @@
+# Arquivos do ambiente virtual
+venv/
+.venv/
+ENV/
+
+# Banco de dados SQLite
+*.sqlite3
+*.db
+
+# Arquivos de IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Python
+__pycache__/
+*.py[cod]
+*.log
+*.pot
+*.pyc
+.env
+.env.local
+
+# Migrações do Django (opcional, mas cuidado!)
+# !/reservas/migrations/
+# /reservas/migrations/*/
+# !/reservas/migrations/__init__.py
+
+# Outros
+.DS_Store
+*.bak
