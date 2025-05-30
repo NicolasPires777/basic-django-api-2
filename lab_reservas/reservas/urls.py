@@ -19,7 +19,8 @@ from django.urls import path
 from .views import (
     UserCreate, UserDetail,
     ReservaCreate, ReservaDetail,
-    LaboratorioReservas, ProfessorReservas
+    LaboratorioReservas, ProfessorReservas,
+    ProfessorCreate, LaboratorioCreate
 )
 
 urlpatterns = [
@@ -34,4 +35,7 @@ urlpatterns = [
     # Filtros
     path('laboratorios/<int:id>/reservas/', LaboratorioReservas.as_view(), name='laboratorio-reservas'),
     path('professores/<int:id>/reservas/', ProfessorReservas.as_view(), name='professor-reservas'),
+
+    path('professores/', ProfessorCreate.as_view(), name='professor-create'),
+    path('laboratorios/', LaboratorioCreate.as_view(), name='laboratorio-create'),
 ]

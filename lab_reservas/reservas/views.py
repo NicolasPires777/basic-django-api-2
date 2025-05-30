@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .models import User, Reserva
-from .serializers import UserSerializer, ReservaSerializer
+from .models import User, Reserva, Professor, Laboratorio
+from .serializers import UserSerializer, ReservaSerializer, ProfessorSerializer, LaboratorioSerializer
 
 # Endpoints para Usuários
 class UserCreate(generics.CreateAPIView):
@@ -32,3 +32,13 @@ class ProfessorReservas(generics.ListAPIView):
     def get_queryset(self):
         professor_id = self.kwargs['id']
         return Reserva.objects.filter(professor_id=professor_id)
+    
+# Endpoint para criar Professor
+class ProfessorCreate(generics.CreateAPIView):
+    queryset = Professor.objects.all()
+    serializer_class = ProfessorSerializer
+
+# Endpoint para criar Laboratório
+class LaboratorioCreate(generics.CreateAPIView):
+    queryset = Laboratorio.objects.all()
+    serializer_class = LaboratorioSerializer
